@@ -6,10 +6,10 @@ categories: horse breed update
 ---
 Initial post for Breed Service
 
-{% mermaid %}
+{% highlight mermaid %}
 graph TD;
     A-->B;
     A-->C;
     B-->D;
     C-->D;
-{% endmermaid %}
+{% endhighlight %}
