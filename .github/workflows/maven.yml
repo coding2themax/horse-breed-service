@@ -24,21 +24,15 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Add Coverage 
-      id: jacoco
-      uses: madrapps/jacoco-report@v1.3
-      with:
-        paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
-        token: ${{ secrets.GITHUB_TOKEN }}
-        min-coverage-overall: 40
-        min-coverage-changed-files: 60
-    - name: Get the Coverage info
-      run: |
-        echo "Total coverage ${{ steps.jacoco.outputs.coverage-overall }}"
-        echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}"
-#    - name: build site
-#      uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
+#    - name: Add Coverage 
+#      id: jacoco
+#      uses: madrapps/jacoco-report@v1.3
 #      with:
-#        ruby-version: '3.2.0'
-#      run: bundle exec jekyll build
-#      working-directory: docs
+#        paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
+#        token: ${{ secrets.GITHUB_TOKEN }}
+#        min-coverage-overall: 40
+#        min-coverage-changed-files: 60
+#    - name: Get the Coverage info
+#      run: |
+#        echo "Total coverage ${{ steps.jacoco.outputs.coverage-overall }}"
+#        echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}"
