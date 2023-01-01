@@ -1,0 +1,13 @@
+package com.coding2themax.horsebreedservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class HorseBreedServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HorseBreedServiceApplication.class, args);
+	}
+
+}
