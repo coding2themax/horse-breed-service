@@ -29,7 +29,7 @@ public class ReactiveHorseRepositoryTest {
   @Test
   void testFindAll() {
      Flux<Horse> mockResults =  repository.findAll();
-     StepVerifier.create(mockResults).expectNext( new Horse("1", "horse breed 1", BloodType.COLD, HorseType.HORSETYPE3));
+     StepVerifier.create(mockResults).expectNext( new Horse("1", "horse breed 1", BloodType.COLD, HorseType.LIGHT));
 
   
   }

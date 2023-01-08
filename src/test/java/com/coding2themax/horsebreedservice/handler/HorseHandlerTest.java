@@ -36,10 +36,10 @@ public class HorseHandlerTest {
 
     Map<String, Horse> HORSE_DATA = new HashMap<>();
 
-    HORSE_DATA.put("1", new Horse("1", "horse breed 1", BloodType.COLD, HorseType.HORSETYPE3));
-    HORSE_DATA.put("2", new Horse("2", "horse breed 2", BloodType.WARM,HorseType.HORSETYPE3));
-    HORSE_DATA.put("3", new Horse("3", "horse breed 3", BloodType.HOT,HorseType.HORSETYPE3));
-    HORSE_DATA.put("4", new Horse("4", "horse breed 4", BloodType.WARM,HorseType.HORSETYPE3));
+    HORSE_DATA.put("1", new Horse("1", "horse breed 1", BloodType.COLD, HorseType.PONY));
+    HORSE_DATA.put("2", new Horse("2", "horse breed 2", BloodType.WARM,HorseType.HEAVY));
+    HORSE_DATA.put("3", new Horse("3", "horse breed 3", BloodType.HOT,HorseType.LIGHT));
+    HORSE_DATA.put("4", new Horse("4", "horse breed 4", BloodType.WARM,HorseType.PONY));
     Flux<Horse> mockHorse = Flux.fromIterable(HORSE_DATA.values());
 
     BDDMockito.given(reactiveHorseRepository.findAll()).willReturn(mockHorse);
