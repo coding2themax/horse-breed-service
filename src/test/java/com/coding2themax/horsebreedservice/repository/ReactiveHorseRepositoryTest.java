@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import com.coding2themax.horsebreedservice.model.BloodType;
 import com.coding2themax.horsebreedservice.model.Horse;
+import com.coding2themax.horsebreedservice.model.HorseType;
 
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
@@ -28,7 +29,7 @@ public class ReactiveHorseRepositoryTest {
   @Test
   void testFindAll() {
      Flux<Horse> mockResults =  repository.findAll();
-     StepVerifier.create(mockResults).expectNext( new Horse("1", "horse breed 1", BloodType.COLD));
+     StepVerifier.create(mockResults).expectNext( new Horse("1", "horse breed 1", BloodType.COLD, HorseType.LIGHT));
 
   
   }
