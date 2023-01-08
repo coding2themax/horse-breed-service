@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.coding2themax.horsebreedservice.model.BloodType;
 import com.coding2themax.horsebreedservice.model.Horse;
+import com.coding2themax.horsebreedservice.model.HorseType;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -18,10 +19,10 @@ public class ReactiveHorseRepository {
   static {
     HORSE_DATA = new HashMap<>();
 
-    HORSE_DATA.put("1", new Horse("1", "Halflinger", BloodType.COLD));
-    HORSE_DATA.put("2", new Horse("2", "American Shetland", BloodType.WARM));
-    HORSE_DATA.put("3", new Horse("3", "Pinto", BloodType.WARM));
-    HORSE_DATA.put("4", new Horse("4", "Arabian", BloodType.HOT));
+    HORSE_DATA.put("1", new Horse("1", "Halflinger", BloodType.COLD, HorseType.PONYTYPE2));
+    HORSE_DATA.put("2", new Horse("2", "American Shetland", BloodType.WARM, HorseType.PONYTYPE1));
+    HORSE_DATA.put("3", new Horse("3", "Pinto", BloodType.WARM, HorseType.HORSETYPE4));
+    HORSE_DATA.put("4", new Horse("4", "Arabian", BloodType.HOT, HorseType.HORSETYPE4));
 
 
 
