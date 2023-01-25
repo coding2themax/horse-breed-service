@@ -53,4 +53,20 @@ public class HorseHandlerTest {
 
 
   }
+
+  @Test
+  void testFindAHorse(){
+    Horse h1 = new Horse("1", "horse breed 1", BloodType.COLD, HorseType.PONY);
+    Mono<Horse> monoHourse = Mono.justOrEmpty(h1);
+
+    BDDMockito.given(reactiveHorseRepository.findOne("1")).willReturn(monoHourse);
+    MockServerRequest request = MockServerRequest.builder().pathVariable("id", "1").build();
+    
+
+    Mono<ServerResponse> mockResult = handler.findHorse(request);
+    StepVerifier.create(mockResult).assertNext(sr -> {
+      sr.statusCode().is2xxSuccessful();  
+    }).expectComplete().verify();
+
+  }
 }

@@ -29,4 +29,10 @@ public class HorseHandler {
 
     return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(repository.findAll(), Horse.class);
   }
+
+  public Mono<ServerResponse> findHorse(ServerRequest request){
+    String horseID = request.pathVariable("id");
+    Mono<Horse> mockHorse = repository.findOne(horseID);
+    return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(mockHorse, Horse.class);
+  }
 }
