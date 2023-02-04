@@ -16,6 +16,7 @@ import com.coding2themax.horsebreedservice.model.BloodType;
 import com.coding2themax.horsebreedservice.model.Horse;
 import com.coding2themax.horsebreedservice.model.HorseType;
 import com.coding2themax.horsebreedservice.repository.ReactiveHorseRepository;
+import com.coding2themax.horsebreedservice.repository.service.HorseRepositoryService;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -26,7 +27,7 @@ public class HorseHandlerTest {
 
 
   @Mock
-  ReactiveHorseRepository reactiveHorseRepository;
+  HorseRepositoryService reactiveHorseRepository;
 
   @InjectMocks
   HorseHandler handler;

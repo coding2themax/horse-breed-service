@@ -6,24 +6,20 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
 import com.coding2themax.horsebreedservice.model.Horse;
-import com.coding2themax.horsebreedservice.repository.ReactiveHorseRepository;
+import com.coding2themax.horsebreedservice.repository.service.HorseRepositoryService;
 
 import reactor.core.publisher.Mono;
 
 @Component
 public class HorseHandler {
   
-  ReactiveHorseRepository repository;
 
-  
+  HorseRepositoryService repository;
 
 
-  public HorseHandler(ReactiveHorseRepository repository) {
+  public HorseHandler(HorseRepositoryService repository) {
     this.repository = repository;
   }
-
-
-
 
   public Mono<ServerResponse> findAllHorses(ServerRequest request){
 
