@@ -17,6 +17,7 @@ public class ReactiveHorseRepository {
   private static final Map<String, Horse> HORSE_DATA;
 
   static {
+    //Using hashmap instead of hashtable because this object is inmutable
     HORSE_DATA = new HashMap<>();
 
     HORSE_DATA.put("1", new Horse("1", "Halflinger", BloodType.COLD, HorseType.LIGHT));
